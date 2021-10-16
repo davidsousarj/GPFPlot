@@ -2,11 +2,8 @@
 Version 0.2, October 2021
 
 Created by David Sousa
-
 Inspired by G. N. Freitas' DENSPLOT (non-published)
-
 Also inspired by Brett Bode's [wxMacMolPlt](brettbode.github.io/wxmacmolplt)
-
 Powered by Python / NumPy / MatPlotLib
 
 
