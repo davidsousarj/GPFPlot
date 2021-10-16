@@ -3,15 +3,13 @@ Version 0.2, October 2021
 
 Created by David Sousa
 Inspired by G. N. Freitas' DENSPLOT (non-published)
-Also inspired by Brett Bode's wxMacMolPlt (brettbode.github.io/wxmacmolplt)
+Also inspired by Brett Bode's [wxMacMolPlt](brettbode.github.io/wxmacmolplt)
 Powered by Python / NumPy / MatPlotLib
 
 
 1. WHAT IS GPF-PLOT?
 --------------------
-GPF-PLOT is a Python script which generates 2D plots of orbitals,
-electronic densities and GPF density partitioning associated to
-VB2000 output files.
+GPF-PLOT is a Python script which generates 2D plots of orbitals, electronic densities and GPF density partitioning associated to VB2000 output files.
 
 
 2. CHANGELOG
@@ -28,15 +26,9 @@ VB2000 output files.
 
 3. HOW TO RUN GPF-PLOT
 ----------------------
-GPF-PLOT uses Python 3.x, so it needs to be installed in your machine.
-Additional requirements are the NumPy[https://numpy.org] and
-MatPlotLib[https://matplotlib.org] libraries. The current version of
-GPF-PLOT (0.2) was tested with Python 3.8.2, NumPy 1.17.4,
-and MatPlotLib 3.1.2.
+GPF-PLOT uses Python 3.x, so it needs to be installed in your machine. Additional requirements are the [NumPy](https://numpy.org) and [MatPlotLib](https://matplotlib.org) libraries. The current version of GPF-PLOT (0.2) was tested with Python 3.8.2, NumPy 1.17.4, and MatPlotLib 3.1.2.
 
-If the above dependencies are installed, you should be able to run
-GPF-PLOT by entering the following command in your terminal (you must
-be in the directory which contains the script):
+If the above dependencies are installed, you should be able to run GPF-PLOT by entering the following command in your terminal (you must be in the directory which contains the script):
 
 `python3 gpfplot.py INPUTFILE`
 
@@ -45,35 +37,23 @@ where `INPUTFILE` is a `*.gpfplot` valid input file.
 
 4. PROGRAM MODES
 ----------------
-Currently, GPF-PLOT has 6 program modes: `ORB`, `HFORB`, `QC`, `INT`,
-`TOT`, and `PROMPT`.
+Currently, GPF-PLOT has 6 program modes: `ORB`, `HFORB`, `QC`, `INT`, `TOT`, and `PROMPT`.
 
-`ORB` and `HFORB` are respectively for plotting VB2000 and GAMESS
-output orbitals.
+`ORB` and `HFORB` are respectively for plotting VB2000 and GAMESS output orbitals.
 
-`QC`, `INT`, and `TOT` are for plotting the total electronic density
-(`TOT`) or its quasi-classical (`QC`) or interference (`INT`) densities,
-for a given set of orbitals.
+`QC`, `INT`, and `TOT` are for plotting the total electronic density (`TOT`) or its quasi-classical (`QC`) or interference (`INT`) densities, for a given set of orbitals.
 
-`PROMPT` is an interactive prompt mode, in which you can ask for the
-program to plot orbitals and/or densities.
+`PROMPT` is an interactive prompt mode, in which you can ask for the program to plot orbitals and/or densities.
 
-For more instructions about the modes, please see the TUTORIAL file.
+For more instructions about the modes, please see the `TUTORIAL.md` file.
 
 
 5. HOW TO WRITE THE INPUTFILE
 -----------------------------
-Although `INPUTFILE` must have the `*.gpfplot` extension, it is just a
-plain text in which INPUT VARIABLES are set.
+Although `INPUTFILE` must have the `*.gpfplot` extension, it is just a plain text in which INPUT VARIABLES are set.
 
-In order to set variables, type the name of the variable, followed
-immediately by an equal sign `=`, followed immediately by the variable
-value. Do not use spaces before or after the equal sign. Each line
-must contain only 1 variable (or none). Variables can be defined in any
-order. If a variable is defined more than once in the INPUTFILE, the
-program reads ONLY the FIRST definition and ignore the rest.
-
-Lines starting with `#` are comments (ignored by the program). 
+In order to set variables, type the name of the variable, followed immediately by an equal sign `=`, followed immediately by the variable value. Do not use spaces before or after the equal sign. Each line must contain only 1 variable (or none). Variables can be defined in any order. If a variable is defined more than once in the `INPUTFILE`, the
+program reads ONLY the FIRST definition and ignore the rest. Lines starting with `#` are comments (ignored by the program). 
 
 
 5.1 INPUT VARIABLES
