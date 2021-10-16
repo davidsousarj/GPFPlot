@@ -1,0 +1,29 @@
+# Input Files
+out_file=C2H4.out
+dens_file=C2H4.dmat
+
+mode=TOT 3 4
+
+# Geometry Settings
+plane=xy
+gridp=100
+xlim=-2.5,2.5
+ylim=-2.5,2.5
+offset=0.0
+
+# Plot Settings
+c_fill=yes
+color_f=coolwarm
+c_lines=yes
+#color_l=RdYlBu
+c_label=no 
+min_c=-1.0
+max_c=1.0
+nconts=20
+auto_c=no
+p_unit=angs
+draw_atom=plane
+draw_name=no
+
+# External File Settings
+save_txt=example_fig1
