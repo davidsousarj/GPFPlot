@@ -2,29 +2,32 @@
 Version 0.2, October 2021
 
 Created by David Sousa
+
 Inspired by G. N. Freitas' DENSPLOT (non-published)
+
 Also inspired by Brett Bode's [wxMacMolPlt](brettbode.github.io/wxmacmolplt)
+
 Powered by Python / NumPy / MatPlotLib
 
 
-1. WHAT IS GPF-PLOT?
+## 1. WHAT IS GPF-PLOT?
 --------------------
 GPF-PLOT is a Python script which generates 2D plots of orbitals, electronic densities and GPF density partitioning associated to VB2000 output files.
 
 
-2. CHANGELOG
+## 2. CHANGELOG
 ------------
-#Version 0.2, October 2021:
+### Version 0.2, October 2021:
 * Minor changes for adjusting to VB2000 3.0 / GAMESS 2021 R2 versions.
 * Fixed error in normalization formula.
 * Fixed parse_overlaps when there is more than 10 groups.
 * Fixed parse_gpf when SPHER keyword is on.
 * Added feature to save EPS file and customize Figure DPI.
-#Version 0.1, July 2020:
+### Version 0.1, July 2020:
 * Initial release.
 
 
-3. HOW TO RUN GPF-PLOT
+## 3. HOW TO RUN GPF-PLOT
 ----------------------
 GPF-PLOT uses Python 3.x, so it needs to be installed in your machine. Additional requirements are the [NumPy](https://numpy.org) and [MatPlotLib](https://matplotlib.org) libraries. The current version of GPF-PLOT (0.2) was tested with Python 3.8.2, NumPy 1.17.4, and MatPlotLib 3.1.2.
 
@@ -35,7 +38,7 @@ If the above dependencies are installed, you should be able to run GPF-PLOT by e
 where `INPUTFILE` is a `*.gpfplot` valid input file.
 
 
-4. PROGRAM MODES
+## 4. PROGRAM MODES
 ----------------
 Currently, GPF-PLOT has 6 program modes: `ORB`, `HFORB`, `QC`, `INT`, `TOT`, and `PROMPT`.
 
@@ -45,10 +48,10 @@ Currently, GPF-PLOT has 6 program modes: `ORB`, `HFORB`, `QC`, `INT`, `TOT`, and
 
 `PROMPT` is an interactive prompt mode, in which you can ask for the program to plot orbitals and/or densities.
 
-For more instructions about the modes, please see the `TUTORIAL.md` file.
+For more instructions about the modes, please see the [TUTORIAL.md](TUTORIAL.md) file.
 
 
-5. HOW TO WRITE THE INPUTFILE
+## 5. HOW TO WRITE THE INPUTFILE
 -----------------------------
 Although `INPUTFILE` must have the `*.gpfplot` extension, it is just a plain text in which INPUT VARIABLES are set.
 
@@ -56,9 +59,9 @@ In order to set variables, type the name of the variable, followed immediately b
 program reads ONLY the FIRST definition and ignore the rest. Lines starting with `#` are comments (ignored by the program). 
 
 
-5.1 INPUT VARIABLES
+### 5.1 INPUT VARIABLES
 
-5.1.1 Input Files and program mode
+#### 5.1.1 Input Files and program mode
 
 VARIABLE  | DEFAULT VALUE |  DESCRIPTION                                
 ------------------------------------------------------------------------
@@ -85,7 +88,7 @@ VARIABLE  | DEFAULT VALUE |  DESCRIPTION
  -----------------------------------------------------------------------
 
 
-5.1.2 Geometry Settings
+#### 5.1.2 Geometry Settings
 
 VARIABLE  | DEFAULT VALUE |  DESCRIPTION                                
 ------------------------------------------------------------------------
@@ -104,7 +107,7 @@ VARIABLE  | DEFAULT VALUE |  DESCRIPTION
 ------------------------------------------------------------------------
 
 
-5.1.3 Plot Settings
+#### 5.1.3 Plot Settings
 
 VARIABLE  | DEFAULT VALUE |  DESCRIPTION                                
 ------------------------------------------------------------------------
@@ -172,7 +175,7 @@ VARIABLE  | DEFAULT VALUE |  DESCRIPTION
 ------------------------------------------------------------------------
 
 
-5.1.4 External File Settings
+#### 5.1.4 External File Settings
 
 VARIABLE  | DEFAULT VALUE |  DESCRIPTION                                
 ------------------------------------------------------------------------
@@ -196,42 +199,30 @@ VARIABLE  | DEFAULT VALUE |  DESCRIPTION
           |               | formatting, please see section 6.4.         
 ------------------------------------------------------------------------
 
-Please check the TUTORIAL file for further information.
+Please check the file [TUTORIAL.md](TUTORIAL.md) for further information.
 
-6. RESOURCES
+## 6. RESOURCES
 ------------
 
-6.1 AVAILABLE COLORMAPS
+### 6.1 AVAILABLE COLORMAPS
 
-Matplotlib provides a huge number of colormaps. They can be checked out
-here: <https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html>.
+Matplotlib provides a huge number of colormaps. They can be checked out [here](https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html).
 
-The recommended colormaps for using in GPF-PLOT are shown in the image 
-`examples/useful_colormaps.png`. My personal favorite is `coolwarm` for
-plotting orbitals and `seismic_r` for plotting densities. These are the
-default colormaps mentioned above.
+The recommended colormaps for using in GPF-PLOT are shown in the image `examples/useful_colormaps.png`. My personal favorite is `coolwarm` for plotting orbitals and `seismic_r` for plotting densities. These are the default colormaps mentioned above.
 
-Hint: all colormaps can be reversed by adding `_r` at the end of its
-name.
+*Hint*: all colormaps can be reversed by adding `_r` at the end of its name.
 
 
-6.2 The gpfplot_figure SCRIPT
+### 6.2 The gpfplot_figure SCRIPT
 
-This script is an extra resource, used for generating high-quality
-figures intended for publishing in papers or books. The figure may
-contain more than one orbital or density plot.
+This script is an extra resource, used for generating high-quality figures intended for publishing in papers or books. The figure may contain more than one orbital or density plot.
 
-Check the TUTORIAL for information about how to use it.
+Check [TUTORIAL.md](TUTORIAL.md) for information about how to use it.
 
 
-7. FINAL REMARKS
+## 7. FINAL REMARKS
 ----------------
 
-There are some improvements wanted for a newer version, but I do not
-know when I will be able to work on it. Although, any suggestions are
-welcome. Since the program has not been fully tested, it probably may
-have bugs.
+There are some improvements wanted for a newer version, but I do not know when I will be able to work on it. Although, any suggestions are welcome. Since the program has not been fully tested, it probably may have bugs.
 
-You can send questions and suggestions to Dr. David
-Sousa[mailto:david.sousarj@yahoo.com.br]. I will be glad to answer any
-questions and receive any suggestions on improving the program.
+You can send questions and suggestions to [Dr. David Sousa](mailto:david.sousarj@yahoo.com.br). I will be glad to answer any questions and receive any suggestions on improving the program.
