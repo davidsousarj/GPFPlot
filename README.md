@@ -1,5 +1,4 @@
 # GPFPlot
-========
 Version 0.2, October 2021
 
 Created by David Sousa
