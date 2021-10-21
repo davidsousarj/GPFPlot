@@ -1,15 +1,12 @@
-#! /usr/bin/python3.8
+#! /usr/bin/env python3
 #
-# GPF-Plot
+# GPFPlot
 # Created by David W. O. de Sousa, david.sousarj@yahoo.com.br
 # Version 0.2, October 2021.
 __version__ = '0.2'
 __author__ = "David W. O. de Sousa"
 #
-# NEEDED IMPROVEMENTS ##################################################
-#TODO: fix symmetry problem in parsing basis set
-
-##TODO: allow changing parse3 variables in prompt mode
+# REQUESTED IMPROVEMENTS ###############################################
 ##TODO: Read orbitals from VB2000 .guess files
 ##TODO: allow non-cartesian planes
 ##TODO: options KIN_QC, KIN_INT, KIN_TOT
@@ -21,6 +18,7 @@ from core.parse_input import *
 from core.parse_vb import *
 from core.operations import *
 from core.plot_utils import *
+from shlex import split as ssplit
 
 def gen_txt(out_file, dens_file, gpf_file, mode,
             plane, Xlim, Ylim, offset, gridp,
@@ -111,7 +109,7 @@ plane, gridp, Xlim, Ylim, offset = parse2(infile)
 # graphic options input
 c_fill, color_f, c_lines, color_l, c_label,\
 min_c, max_c, nconts, auto_c,\
-p_unit, draw_atom, draw_name = parse3(infile, mode0)
+p_unit, draw_atom, draw_name, title = parse3(infile, mode0)
 
 save_png, save_eps, dpipng, dpieps, save_txt = parse4(infile)
 ########################################################################
@@ -199,13 +197,21 @@ print()
 if mode == "PROMPT":
 	while True:
 		mode1 = input("gpfplot [{0}]> ".format(out_file[:-4]))	
-		mode1 = mode1.split()
+		mode1 = ssplit(mode1)
 
 		if mode1 == []: # just pressed enter
 			continue
 
 		elif mode1[0] == "exit":
 			exit()
+
+		elif "=" in mode1[0]:
+			c_fill, color_f, c_lines, color_l, c_label,\
+			min_c, max_c, nconts, auto_c,\
+			p_unit, draw_atom, draw_name, title = \
+            parse3_prompt(mode1, c_fill, color_f, c_lines, color_l, \
+			c_label, min_c, max_c, nconts, auto_c,\
+			p_unit, draw_atom, draw_name, title)
 
 		else:
 			# Create Plot Window
@@ -251,6 +257,7 @@ if mode == "PROMPT":
                           c_label, min_c, max_c, nconts, auto_c, p_unit,
                           draw_atom, draw_name, Atom_posx, Atom_posy,
                           Atom_labl, label_x, label_y, X1, Y1, PSI, 0)
+			if title != "": plt.suptitle(title, fontsize=16)
 			plt.show()
 			fig.clf()
 
@@ -280,6 +287,7 @@ else:
                   min_c, max_c, nconts, auto_c, p_unit,
                   draw_atom, draw_name, Atom_posx, Atom_posy,
                   Atom_labl, label_x, label_y, X1, Y1, PSI, 0)
+	if title != "": plt.suptitle(title, fontsize=16)
 	print(" "+" ".join(mode)+" plotted.")
 
 	if save_png != "":

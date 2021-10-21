@@ -1,7 +1,20 @@
-#! /usr/bin/python3.8
+#! /usr/bin/env python3.8
+# 
+# GPFPlot Figure Generation
+# Created by David W. O. de Sousa, david.sousarj@yahoo.com.br
+# Version 0.2, October 2021.
+#
+# Imports and functions ################################################
 import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib import gridspec
+
+# Uncomment the lines below if gpfplot_figure.py is not in the GPFPlot 
+# parent directory. Edit the variable GPFPATH adequately.
+#GPFPATH = "/home/david/bin/gpfplot-0.2"
+#import sys
+#sys.path.append(GPFPATH)
+
 from core.parse_input import *
 from core.parse_vb import parse_geom
 from core.plot_utils import Plot_Function, Plot_Settings
@@ -46,7 +59,7 @@ titles=[ r"$\mathdefault{" + i + "}$" for i in titles]
 
 # For each p_list object ###############################################
 for i in range(len(p_list)):
-	# Parse text grids #################################################
+	# Parse text grids 
 	f = open(p_list[i]+".txt")
 	ln = f.readline()
 	ln = f.readline()
