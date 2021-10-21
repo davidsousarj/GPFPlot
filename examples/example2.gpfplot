@@ -1,0 +1,19 @@
+# Input Files
+out_file=C2H4.out
+dens_file=C2H4.dmat
+
+mode=INT 3 4
+# Geometry Settings
+plane=xy
+gridp=80
+xlim=-2.5,2.5
+ylim=-2.5,2.5
+offset=0.0
+
+# Plot Settings
+nconts=20
+title=Interference Density C-C sigma bond
+
+# External File Settings
+save_png=C2H4.INT_3,4
+

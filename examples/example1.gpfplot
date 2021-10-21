@@ -23,6 +23,7 @@ auto_c=no
 p_unit=angs
 draw_atom=plane
 draw_name=yes
+title=C2H4 Molecule
 
 # External File Settings
 save_png=C2H4.orb1
