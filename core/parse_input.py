@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # GPFPlot Library for Parsing Input File
-# Last modified: 2020-07-09
+# Last modified: 2021-10-20
 
 MORB = ["ORB","HFORB"]
 DENS = ["QC","INT","TOT"]
@@ -52,7 +52,7 @@ def parse2(infile):
 def parse3(infile, mode):
 	c_fill  = truefalse( parse(infile, "c_fill", "t"))
 	if mode in DENS:
-		color_f = "cm." + parse(infile, "color", "seismic_r")
+		color_f = "cm." + parse(infile, "color_f", "seismic_r")
 		min_c = float( parse(infile, "min_c", "-.1")) 
 		max_c = float( parse(infile, "max_c",  ".1")) 
 	else:
@@ -67,9 +67,34 @@ def parse3(infile, mode):
 	p_unit= parse(infile, "p_unit", "angs")
 	draw_atom = parse(infile, "draw_atom","plane")
 	draw_name = truefalse( parse(infile, "draw_name", "t"))
+	title = parse(infile, "title","")
 	return c_fill, color_f, c_lines, color_l, c_label,\
            min_c, max_c, nconts, auto_c,\
-           p_unit, draw_atom, draw_name
+           p_unit, draw_atom, draw_name, title
+
+def parse3_prompt(infile, c_fill, color_f, c_lines, color_l, c_label,\
+           min_c, max_c, nconts, auto_c, p_unit, draw_atom, draw_name,
+           title):
+	"""
+	Perform parse3 again in PROMPT mode. Default values for all variables
+	are their previously set values. 
+	"""
+	c_fill  = truefalse( parse(infile, "c_fill", str(c_fill)))
+	color_f = "cm." + parse(infile, "color_f", color_f[3:])
+	min_c = float( parse(infile, "min_c", str(min_c))) 
+	max_c = float( parse(infile, "max_c", str(max_c))) 
+	color_l = parse(infile, "color_l", str(color_l))
+	c_lines = truefalse( parse(infile, "c_lines", str(c_lines)))
+	c_label = truefalse( parse(infile, "c_label", str(c_label)))
+	auto_c= truefalse( parse(infile, "auto_c", str(auto_c)))
+	nconts= int( parse(infile, "nconts",  str(nconts)))
+	p_unit= parse(infile, "p_unit", p_unit)
+	draw_atom = parse(infile, "draw_atom", draw_atom)
+	draw_name = truefalse( parse(infile, "draw_name", str(draw_name)))
+	title = parse(infile, "title", title)
+	return c_fill, color_f, c_lines, color_l, c_label,\
+           min_c, max_c, nconts, auto_c,\
+           p_unit, draw_atom, draw_name, title
 
 def parse4(infile):
 	save_list = parse(infile,  "save_png").split(" ")
