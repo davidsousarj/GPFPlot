@@ -11,7 +11,7 @@ from matplotlib import gridspec
 
 # Uncomment the lines below if gpfplot_figure.py is not in the GPFPlot 
 # parent directory. Edit the variable GPFPATH adequately.
-#GPFPATH = "/home/david/bin/gpfplot-0.2"
+#GPFPATH = "/home/david/bin/gpfplot-0.2.1"
 #import sys
 #sys.path.append(GPFPATH)
 
@@ -146,4 +146,5 @@ fig.subplots_adjust(hspace=0.17)
 fig.savefig("%s.png" %figure_name, dpi=300)
 fig.savefig("%s.eps" %figure_name, dpi=300)
 plt.show()
+
 
