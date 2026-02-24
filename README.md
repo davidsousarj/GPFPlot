@@ -1,5 +1,5 @@
 # GPFPlot
-Version 0.2, October 2021
+Version 0.2.1, February 2025
 
 Created by David Sousa
 
@@ -16,6 +16,8 @@ GPFPlot is a Python script which generates 2D plots of orbitals, electronic dens
 
 ## 2. CHANGELOG
 ------------
+### Version 0.2.1, February 2025:
+* Small fixes for adjusting to more recent NumPy / MatPlotLib versions.
 ### Version 0.2, October 2021:
 * Minor changes for adjusting to VB2000 3.0 / GAMESS 2021 R2 versions.
 * Fixed error in normalization formula.
