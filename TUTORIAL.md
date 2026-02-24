@@ -1,6 +1,6 @@
 # GPFPlot Tutorial
 
-Version 0.2, October 2021
+Version 0.2.1, February 2025
 
 Before starting, make sure you have read the [README.md](README.md) file.
 
