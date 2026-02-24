@@ -2,7 +2,7 @@
 # 
 # GPFPlot Figure Generation
 # Created by David W. O. de Sousa, david.sousarj@yahoo.com.br
-# Version 0.2, October 2021.
+# Version 0.2.1, February 2025.
 #
 # Imports and functions ################################################
 import numpy as np
@@ -146,3 +146,4 @@ fig.subplots_adjust(hspace=0.17)
 fig.savefig("%s.png" %figure_name, dpi=300)
 fig.savefig("%s.eps" %figure_name, dpi=300)
 plt.show()
+
