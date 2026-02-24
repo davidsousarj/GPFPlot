@@ -3,7 +3,8 @@
 # GPFPlot
 # Created by David W. O. de Sousa, david.sousarj@yahoo.com.br
 # Version 0.2, October 2021.
-__version__ = '0.2'
+# Update: 0.2.1, February 2025.
+__version__ = '0.2.1'
 __author__ = "David W. O. de Sousa"
 #
 # REQUESTED IMPROVEMENTS ###############################################
@@ -54,8 +55,8 @@ print("""\
  -                                                                     -
  *               G    P    F    -    P    L    O    T                  *
  -                                                                     -
- *                            Version 0.2                              *
- -                            October 2021                             -
+ *                           Version 0.2.1                             *
+ -                           February 2025                             -
  *                                                                     *
  -                      Created by David Sousa                         -
  *                Inspired by G. N. Freitas' DENSPLOT                  *
@@ -220,14 +221,14 @@ if mode == "PROMPT":
 			# mode ORB
 			if mode1[0] == 'ORB':
 				norb = int( mode1[1] ) - 1
-				fig.canvas.set_window_title("{0} ORB {1}".\
+				fig.canvas.manager.set_window_title("{0} ORB {1}".\
                                           format(out_file[:-4], norb+1))
 				PSI = ORB_List[ norb ]
 
 			# mode HFORB
 			elif mode1[0] == 'HFORB':
 				norb = int( mode1[1] ) - 1
-				fig.canvas.set_window_title("{0} HFORB {1}".\
+				fig.canvas.manager.set_window_title("{0} HFORB {1}".\
                                           format(out_file[:-4], norb+1))
 				PSI = HFO_List[ norb ]
 
@@ -239,7 +240,7 @@ if mode == "PROMPT":
 					continue			
 
 				N = list( map(int, mode1[1:]) )
-				fig.canvas.set_window_title("{0} {2} {1}".\
+				fig.canvas.manager.set_window_title("{0} {2} {1}".\
                                             format(out_file[:-4],
                                             " ".join(str(N)), mode1[0]))
 				if mode1[0] == "QC":
@@ -259,22 +260,22 @@ if mode == "PROMPT":
                           Atom_labl, label_x, label_y, X1, Y1, PSI, 0)
 			if title != "": plt.suptitle(title, fontsize=16)
 			plt.show()
-			fig.clf()
+			#fig.clf() # It crashes matplotlib in more recent versions
 
 # Single plot mode
 else:
 	fig = plt.figure()
 	# mode ORB
 	if mode[0] == 'ORB':
-		fig.canvas.set_window_title("{0} ORB {1}".\
+		fig.canvas.manager.set_window_title("{0} ORB {1}".\
                                     format(out_file[:-4], norb+1))
 	# mode HFORB
 	elif mode[0] == 'HFORB':
-		fig.canvas.set_window_title("{0} HFORB {1}".\
+		fig.canvas.manager.set_window_title("{0} HFORB {1}".\
                                     format(out_file[:-4], norb+1))
 	# mode QC, INT, TOT
 	elif mode[0] in DENS:
-		fig.canvas.set_window_title("{0} {2} {1}".\
+		fig.canvas.manager.set_window_title("{0} {2} {1}".\
                                     format(out_file[:-4],
                                            " ".join(str(N)), mode[0]))
 	# error
