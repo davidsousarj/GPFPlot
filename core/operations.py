@@ -1,9 +1,10 @@
 #! /usr/bin/env python3
 # GPFPlot Library for Orbital and Density Calculations
-# Last modified: 2021-09-30
+# Last modified: 2025-02-24
 #
 # Imports and functions ################################################
 import numpy as np
+from math import factorial as f
 
 # Global variables and functions #######################################
 
@@ -12,7 +13,7 @@ DEBUG=False # Print text results
 pi=np.pi
 sqrt=np.sqrt
 exp=np.exp
-f=np.math.factorial
+#f=np.math.factorial # deprecated
 M=np.multiply
 RAng=0.529177249 # angstrom / bohr
 floor = lambda x: int(np.math.floor(x))
