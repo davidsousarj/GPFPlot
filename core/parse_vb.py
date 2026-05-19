@@ -258,7 +258,7 @@ def parse_overlaps(jobtext, hf, GL):
 	for i in range(start, NG):
 		line = getLine(jobtext,
                      "OVERLAP MATRIX OF VB ORBITALS FOR GROUP  {0:2d}".\
-                     format(i+1)) + 5
+                     format(i+1), pos=-1) + 5
 		for j in range(len(GL[i]) - 1):
 			for k in range(j+1):
 				OVERLAPS[GL[i][j + 1]][GL[i][k]]\
