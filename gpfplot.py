@@ -4,7 +4,8 @@
 # Created by David W. O. de Sousa, david.sousarj@yahoo.com.br
 # Version 0.2, October 2021.
 # Update: 0.2.1, February 2025.
-__version__ = '0.2.1'
+# Update: 0.2.2, May 2026.
+__version__ = '0.2.2'
 __author__ = "David W. O. de Sousa"
 #
 # REQUESTED IMPROVEMENTS ###############################################
