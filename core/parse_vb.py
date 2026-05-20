@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # GPFPlot Library for Parsing Input Files
-# Last modified: 2020-07-09
+# Last modified: 2026-05-20
 
 from math import ceil
 from core.parse_input import getLine
