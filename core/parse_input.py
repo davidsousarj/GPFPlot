@@ -8,20 +8,31 @@ MISC = ["PROMPT"]
 MODES= MORB + DENS + MISC
 
 def getLine(source, string, pos=0, none=True, comments=True):
-	"""Get the line index of the ($pos+1)-th
-       occurrence of $string in $source."""
-	count=0
-	for index in range(len(source)):
-		if string in source[index]:
-			if source[index][0] == "#":
-				continue # Ignore comments
-			if pos == count:
-				return index
-			count += 1
+	"""Get the line index of the ($pos+1)-th occurrence of $string in $source.
+	   Use pos=-1 to get the LAST occurrence."""
+	if pos == -1:
+		result = None
+		for index in range(len(source)):
+			if string in source[index]:
+				if comments and source[index][0] == "#":
+					continue
+				result = index
+		if result is not None:
+			return result
+	else:
+		count=0
+		for index in range(len(source)):
+			if string in source[index]:
+				if source[index][0] == "#":
+					continue # Ignore comments
+				if pos == count:
+					return index
+				count += 1
 	if none:
 		return None
 	else:
 		raise ValueError('string not found')
+
 
 def truefalse(s):
   return s.lower() in ("yes", "true", "t", "y", "1")
