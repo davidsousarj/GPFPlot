@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # GPFPlot Library for Parsing Input File
-# Last modified: 2021-10-20
+# Last modified: 2026-05-20
 
 MORB = ["ORB","HFORB"]
 DENS = ["QC","INT","TOT"]
